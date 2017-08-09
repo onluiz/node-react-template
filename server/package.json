@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "a nodejs template",
+  "main": "server.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onluiz/node-react-template.git"
+  },
+  "author": "onluiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onluiz/node-react-template/issues"
+  },
+  "homepage": "https://github.com/onluiz/node-react-template#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.6"
+  }
+}
