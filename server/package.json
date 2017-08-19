@@ -1,27 +1,23 @@
 {
-  "name": "server",
+  "name": "test1",
   "version": "1.0.0",
-  "description": "a nodejs template",
+  "description": "A test project",
   "main": "server.js",
-  "directories": {
-    "example": "examples",
-    "test": "test"
-  },
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/onluiz/node-react-template.git"
-  },
-  "author": "onluiz",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/onluiz/node-react-template/issues"
+  "engines": {
+    "node": "6.6.0"
   },
-  "homepage": "https://github.com/onluiz/node-react-template#readme",
   "dependencies": {
-    "express": "^4.15.4",
-    "mongoose": "^4.11.6"
+    "body-parser": "1.17.2",
+    "express": "4.15.3",
+    "knex": "0.12.0",
+    "mocha": "3.5.0",
+    "mongoose": "4.11.6",
+    "pg": "7.0.2"
   }
 }
