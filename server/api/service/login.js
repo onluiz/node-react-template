@@ -1,7 +1,7 @@
 exports.auth = function (req, res) {
     var secret = require('../../config/passport-secret').secret,
         jwt = require('jsonwebtoken'),
-        User = require('../models/userSchema');
+        User = require('../models/user');
 
     User.findOne({name: req.body.name}, function (err, user) {
         if (err) throw err;

@@ -1,2 +1,2 @@
-require('./config/mongo').start();
+require('./config/mongo')();
 require('./config/express')();

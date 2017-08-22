@@ -1,6 +1,6 @@
 module.exports = function (app) {
 
-    let userController = require('../controllers/userController');
+    let userController = require('../service/user');
 
     app.route('/users')
         .get(userController.listAll)

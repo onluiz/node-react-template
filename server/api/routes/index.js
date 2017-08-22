@@ -15,6 +15,6 @@ module.exports = function (app) {
     });
 
     require('../routes/login')(app);
-    require('../routes/users')(app);
-    require('../routes/tasks')(app);
+    require('../routes/user')(app);
+    require('../routes/task')(app);
 };

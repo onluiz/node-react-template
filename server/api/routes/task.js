@@ -1,5 +1,5 @@
 module.exports = function(app) {
-    var task = require('../controllers/taskController');
+    var task = require('../service/task');
 
     app.route('/tasks')
         .get(task.list_all_tasks)
