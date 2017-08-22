@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-    User = mongoose.model('User');
+    User = mongoose.model('User'),
+    bcrypt = require('../config/bcrypt');
 
 exports.listAll = function(req, res) {
     User.find({}, function(err, user) {
@@ -10,12 +11,15 @@ exports.listAll = function(req, res) {
 };
 
 exports.create = function(req, res) {
-    var user = new User(req.body);
-    user.save(function(err, user) {
-        if (err)
-            res.send(err);
-        res.json(user);
-    });
+    bcrypt.crypt(req.body.password, function(hash) {
+        var user = new User(req.body);
+        user.password = hash;
+        user.save(function(err, user) {
+            if (err)
+                res.send(err);
+            res.json(user);
+        });
+    })
 };
 
 exports.findById = function(req, res) {
