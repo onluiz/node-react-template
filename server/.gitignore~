@@ -40,7 +40,7 @@ jspm_packages/
 typings/
 
 # Optional npm cache directory
-.npm/ki
+.npm
 
 # Optional eslint cache
 .eslintcache
@@ -58,5 +58,5 @@ typings/
 .env
 
 #others
-.idea/
+
 

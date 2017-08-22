@@ -1,13 +1,6 @@
 nodejs
 express
-postgressql + knex
+postgressql + knex OU mongodb
 testes: mocha
+passport + JWT (Json Web Token)
 
-verificar como ficaria a estrutura de pastas
-
-não precisa de models
-
-verificar como utilizar token de segurança
-
-Visto na internet que:
-- nome das pastas pode ficar no plural;

@@ -1,6 +1,6 @@
-let mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-let taskSchema = mongoose.Schema({
+var taskSchema = mongoose.Schema({
     name: {
         type: String,
         required: 'Kindly enter the name of the task'

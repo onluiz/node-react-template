@@ -2,7 +2,7 @@ exports.getJWTStrategy = function () {
     var JwtStrategy = require('passport-jwt').Strategy,
         ExtractJwt = require('passport-jwt').ExtractJwt,
         secret = require('./passport-secret').secret,
-        User = require('../api/models/user');
+        User = require('../models/user');
 
     var opts = {};
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();

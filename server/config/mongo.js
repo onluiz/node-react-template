@@ -9,6 +9,6 @@ module.exports = function () {
         console.log('we are connected!');
     });
 
-    var Task = require('../api/models/task');
-    var User = require('../api/models/user');
+    var Task = require('../models/task');
+    var User = require('../models/user');
 };

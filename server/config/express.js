@@ -9,7 +9,7 @@ module.exports = function () {
 
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
-    require('../api/routes/index')(app);
+    require('../routes/index')(app);
     app.use(function(req, res) {
         res.status(404).send({url: req.originalUrl + ' not found'})
     });
