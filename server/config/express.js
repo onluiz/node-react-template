@@ -1,0 +1,20 @@
+module.exports = function () {
+    var express = require('express');
+    var app = express();
+    var bodyParser = require('body-parser');
+    var port = process.env.PORT || 8080;
+    var router = express.Router();
+    var passport = require("passport");
+    passport.use(require('../config/passport-config').getJWTStrategy());
+
+    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.json());
+    require('../api/routes/index')(app);
+    app.use(function(req, res) {
+        res.status(404).send({url: req.originalUrl + ' not found'})
+    });
+    app.use('/api', router);
+    app.listen(port);
+
+    console.log('Magic happens on port ' + port);
+};

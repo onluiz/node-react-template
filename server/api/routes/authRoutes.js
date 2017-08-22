@@ -2,7 +2,12 @@ module.exports = function (app, router) {
 
     let mongoose = require('mongoose'),
         User = mongoose.model('User'),
-        jwt = require('jsonwebtoken');
+        jwt = require('jsonwebtoken'),
+        passport = require("passport");
+
+    router.get('/auth/secret', passport.authenticate('jwt', { session: false }), function (req, res) {
+        res.json("Success! You can not see this without a token");
+    });
 
     router.post('/auth/authenticate', function(req, res) {
         let name = req.body.name;
@@ -20,6 +25,8 @@ module.exports = function (app, router) {
                     return res.json({ success: false, message: 'Authentication failed. Wrong password.' });
                 }
 
+                console.log(app.get('superSecret'));
+
                 let token = jwt.sign(user, app.get('superSecret'), {
                     expiresIn : 1440 // expires in 24 hours
                 });
@@ -36,6 +43,8 @@ module.exports = function (app, router) {
     router.use(function(req, res, next) {
         // check header or url parameters or post parameters for token
         var token = req.body.token || req.query.token || req.headers['x-access-token'];
+
+        console.log('another one');
 
         // decode token
         if (token) {
