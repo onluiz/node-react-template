@@ -1,7 +1,7 @@
 {
-  "name": "test1",
+  "name": "node-react-template",
   "version": "1.0.0",
-  "description": "A test project",
+  "description": "Examples of nodejs and react =)",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
